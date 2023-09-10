@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Put a function that two matrices element-wise"""
+"""Peform element-wise addition across multiple dimensions"""
 
 
 def add_matrices2D(mat1, mat2):
