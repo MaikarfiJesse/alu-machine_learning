@@ -10,4 +10,4 @@ def matrix_transpose(matrix):
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
             transpose[j][i] = matrix[i][j]
-        return transpose
+    return transpose

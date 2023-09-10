@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Transpose a list-based matrix"""
+"""A functio that returns the traspose of a 2D matrix"""
 
 
 def matrix_transpose(matrix):
