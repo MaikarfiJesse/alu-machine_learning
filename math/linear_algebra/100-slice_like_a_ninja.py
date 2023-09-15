@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A function that slices a matrix alog specific axes""
+"""A function that slices a matrix along specific axes"""
 
 
 def np_slice(matrix, axes={}):
