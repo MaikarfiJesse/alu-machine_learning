@@ -45,3 +45,12 @@ class Binomial:
             p = sum(d/n for d in data)/len(data)
             self.n = n
             self.p = float(p)
+
+     def pmf(self, k):
+        """Calculate the value of the pmf for a given number of "successes"""
+        try:
+            k = int(k)
+            assert 0 <= k <= self.n
+        except (TypeError, AssertionError):
+            return 0
+        return n_choose_k(self.n, k) * self.p**k * (1-self.p)**(self.n-k)
