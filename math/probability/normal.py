@@ -25,3 +25,11 @@ class Normal:
                 raise ValueError('data must contain multiple values')
             self.mean = sum(data)/len(data)
             self.stddev = (sum((self.mean - x)**2 for x in data)/len(data))**.5
+
+    def z_score(self, x):
+        """Calculate the z-score of x"""
+        return (x - self.mean)/self.stddev
+
+    def x_value(self, z):
+        """Calculate the value that x would take with a z-score of z"""
+        return z*self.stddev + self.mean
