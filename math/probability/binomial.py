@@ -46,7 +46,7 @@ class Binomial:
             self.n = n
             self.p = float(p)
 
-     def pmf(self, k):
+    def pmf(self, k):
         """Calculate the value of the pmf for a given number of "successes"""
         try:
             k = int(k)
@@ -54,3 +54,12 @@ class Binomial:
         except (TypeError, AssertionError):
             return 0
         return n_choose_k(self.n, k) * self.p**k * (1-self.p)**(self.n-k)
+
+    def cdf(self, k):
+        """Calculate the value of the cdf for a given number of "successes"""
+        try:
+            k = int(k)
+            assert 0 <= k <= self.n
+        except (TypeError, AssertionError):
+            return 0
+        return sum(self.pmf(i) for i in range(k+1))
