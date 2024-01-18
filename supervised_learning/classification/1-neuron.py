@@ -46,7 +46,7 @@ class Neuron:
 
     @property
     def W(self):
-        """gets the private instance attribute of the weights vector for the neuron"""
+        """gets the private instance attribute of the weights vector"""
         return (self.__W)
 
     @property
