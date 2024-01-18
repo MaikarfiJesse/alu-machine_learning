@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Write a Neuron class that defines a single neuron performing binary classification
+Write a Neuron class that defines
+a single neuron performing binary classification
 """
 
 
