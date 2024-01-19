@@ -93,3 +93,58 @@ class NeuralNetwork:
 
     @property
     def b2(self):
+        """gets the private instance attribute __b2"""
+        return (self.__b2)
+
+    @property
+    def A2(self):
+        """gets the private instance attribute __A2"""
+        return (self.__A2)
+
+    def forward_prop(self, X):
+        """
+        calculates the forward propagation of the neural network
+
+        parameters:
+            X [numpy.ndarray with shape (nx, m)]: contains the input data
+                nx is the number of input features to the neuron
+                m is the number of examples
+
+        updates the private attributes __A1 and __A2
+            using sigmoid activation function
+        sigmoid function:
+            __A = 1 / (1 + e^(-z))
+            z = sum of ((__Wi * __Xi) + __b) from i = 0 to nx
+
+        return:
+            the updated private attributes __A1 and __A2, respectively
+        """
+        z1 = np.matmul(self.W1, X) + self.b1
+        self.__A1 = 1 / (1 + (np.exp(-z1)))
+        z2 = np.matmul(self.W2, self.__A1) + self.b2
+        self.__A2 = 1 / (1 + (np.exp(-z2)))
+        return (self.A1, self.A2)
+
+    def cost(self, Y, A):
+        """
+        calculates the cost of the model using logistic regression
+
+        parameters:
+            Y [numpy.ndarray with shape (1, m)]:
+                contains correct labels for the input data
+            A [numpy.ndarray with shape (1, m)]:
+                contains the activated output of the neuron for each example
+
+        logistic regression loss function:
+            loss = -((Y * log(A)) + ((1 - Y) * log(1 - A)))
+            To avoid log(0) errors, uses (1.0000001 - A) instead of (1 - A)
+        logistic regression cost function:
+            cost = (1 / m) * sum of loss function for all m example
+
+        return:
+            the calculated cost
+        """
+        m = Y.shape[1]
+        m_loss = np.sum((Y * np.log(A)) + ((1 - Y) * np.log(1.0000001 - A)))
+        cost = (1 / m) * (-(m_loss))
+        return (cost)
