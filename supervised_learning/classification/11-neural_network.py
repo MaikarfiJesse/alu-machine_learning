@@ -93,4 +93,3 @@ class NeuralNetwork:
 
     @property
     def b2(self):
-        """
