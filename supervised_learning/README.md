@@ -1,1 +1,1 @@
-CLassification
+Regularization
