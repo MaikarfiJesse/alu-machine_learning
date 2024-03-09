@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Write a script that displays the upcoming launch as:
-Name of the launch, The date (in local time), The rocket name, The name (with the locality) of the launchpad."""
+Name of the launch, The date (in local time), The rocket name,
+The name (with the locality) of the launchpad."""
 
 
 import requests
