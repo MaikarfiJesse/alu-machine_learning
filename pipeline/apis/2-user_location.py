@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Write a script that print the location of a specific user,
-where user is passed as first argument of the script with full API URL
-
-ex) "./2-user_location.py https://api.github.com/users/holbertonschool"
-"""
+"""Write a script that print the location of a specific user"""
 
 
 import requests
