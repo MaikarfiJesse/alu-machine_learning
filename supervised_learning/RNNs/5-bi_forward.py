@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create the class BidirectionalCell that represents a bidirectional cell of 
+"""Create the class BidirectionalCell that represents a bidirectional cell of
 an RNN"""
 
 
