@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Write the function that performs forward propagation for bidirectional RNN"""
+"""Write the function that performs forward propagation for
+bidirectional RNN"""
 
 
 import numpy as np
