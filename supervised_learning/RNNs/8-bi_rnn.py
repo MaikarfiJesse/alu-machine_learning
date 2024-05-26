@@ -1,17 +1,25 @@
 #!/usr/bin/env python3
-"""Write the function that performs forward propagation for
-bidirectional RNN"""
 
-
+"""Write the function bi_rnn that
+perfoms forward propagation for bidirectional RNN"""
 import numpy as np
 
 
-def bi_rnn(bi_cell, X, h_0, h_t):
-    """
-    Performs forward propagation for bidirectional RNN
-    """
+def bi_rnn(bi_cells, X, h_0, h_t):
+    """forward propagation for bi rnn
+    bi_cells - instance of BidirectionalCell
+    X - data used of shape(t, m, i)
+        t - time steps
+        m - batch size
+        i - data dimensionality
+    h_0 - initial hidden state in forward dir of shape(m, h)
+        h - hidden state dimensionality
+    h_t - initial hidden state in backward dir of shape(m, h)
+    returns H, Y
+        H - all hidden states
+        Y - outputs"""
 
-     t, m, i = X.shape
+    t, m, i = X.shape
     h = h_0.shape[1]
 
     # Initialize the hidden states container
