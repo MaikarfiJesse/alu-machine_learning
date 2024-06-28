@@ -9,29 +9,24 @@ import numpy as np
 
 def P_init(X, perplexity):
     """
-    Initializes all variables required to
-    calculate the P affinities in t-SNE
+    X: numpy.ndarray: (n, d) the dataset
+        n - no. of data points
+        d - no. of dimentions in each point
+    perplexity: the perplexity in all Gaussian distributions
 
-    parameters:
-        X [numpy.ndarray of shape (n, d)]:
-            containing the dataset to be transformed by t-SNE
-            n: the number of data points
-            d: the number of dimensions in each point
-        perplexity:
-            perplexity that all Gaussian distributions should have
-
-    returns:
-        (D, P, betas, H)
-        D [numpy.ndarray of shape (n, n)]:
-            calculates the squared pairwise distance between two data points
-            The diagonal D should be 0s
-        P [numpy.ndarray of shape (n, n)]:
-            initialized to all 0s that will contain P affinities
-        betas [numpy.ndarray of shape (n, 1)]:
-            initialized to all 1s that will contain all the beta values
-        H: the Shannon entropy for perplexity with a base of 2
+    Returns:
+    D: numpy.ndarray: (n, n) the pairwise Euclidean distances
+        - calculates square pairwise distances btn two data points
+        - initialized to all 0s
+        - diagonal set to 0s
+    P: numpy.ndarray: (n, n) the P affinities
+        - initialized to all 0s
+    betas: numpy.ndarray: (n, 1) the beta values
+        - initialized to all 1s
+        - B = 1 / (2 * sigma^2)
+    H: float: the Shannon entropy for perplexity
     """
-     n, d = X.shape
+    n, d = X.shape
 
     # Calculate the pairwise Euclidean distances
     sum_X = np.sum(np.square(X), 1)
