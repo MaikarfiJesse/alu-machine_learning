@@ -31,11 +31,19 @@ def P_init(X, perplexity):
             initialized to all 1s that will contain all the beta values
         H: the Shannon entropy for perplexity with a base of 2
     """
-    n = X.shape[0]
-    mult = np.matmul(X, -X.T)
-    summation = np.sum(np.square(X), 1)
-    D = np.add(np.add(2 * mult, summation), summation.T)
+     n, d = X.shape
+
+    # Calculate the pairwise Euclidean distances
+    sum_X = np.sum(np.square(X), 1)
+    D = np.add(np.add(-2 * np.dot(X, X.T), sum_X).T, sum_X)
+
+    # Initialize the P affinities
     P = np.zeros((n, n))
+
+    # Initialize the beta values
     betas = np.ones((n, 1))
+
+    # Initialize the Shannon entropy
     H = np.log2(perplexity)
-    return (D, P, betas, H)
+
+    return D, P, betas, H
