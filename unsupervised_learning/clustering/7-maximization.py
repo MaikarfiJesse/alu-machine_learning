@@ -9,7 +9,7 @@ import numpy as np
 
 def maximization(X, g):
     """
-    initializes variables for a GMM
+    initializes variables for a Gaussian Mixture Model
 
     X: numpy.ndarray (n, d) containing the dataset
         - n no. of data points
