@@ -12,7 +12,7 @@ def baum_welch(Observations, Transition, Emission, Initial, iterations=1000):
 
     parameters:
         Observations [numpy.ndarray of shape (T,)]:
-            contains the index of the observation
+            contains the index of the observations
             T: number of observations
         Transition [2D numpy.ndarray of shape (M, M)]:
             contains the initialized transition probabilities
@@ -29,10 +29,10 @@ def baum_welch(Observations, Transition, Emission, Initial, iterations=1000):
         the converged Transition, Emission
         or None, None on failure
     """
-    # check that Observation is the correct type and dimension
+    # check that Observations is the correct type and dimension
     if type(Observations) is not np.ndarray or len(Observation.shape) < 1:
         return None, None
-    # save T from Observation's shape
+    # save T from Observations shape
     T = Observations.shape[0]
     # check that Transition is the correct type and dimension
     if type(Transition) is not np.ndarray or len(Transition.shape) != 2:
