@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Write the function that performs the Baum-Welch algorithm for a
+"""Create the function that performs the Baum-Welch algorithm for a
 Hidden Markov Model"""
 
+
 import numpy as np
+
 
 def baum_welch(Observations, Transition, Emission, Initial, iterations=1000):
     """
@@ -27,10 +29,10 @@ def baum_welch(Observations, Transition, Emission, Initial, iterations=1000):
         the converged Transition, Emission
         or None, None on failure
     """
-    # check that Observations is the correct type and dimension
-    if type(Observations) is not np.ndarray or len(Observations.shape) < 1:
+    # check that Observation is the correct type and dimension
+    if type(Observations) is not np.ndarray or len(Observation.shape) < 1:
         return None, None
-    # save T from Observations' shape
+    # save T from Observation's shape
     T = Observations.shape[0]
     # check that Transition is the correct type and dimension
     if type(Transition) is not np.ndarray or len(Transition.shape) != 2:
