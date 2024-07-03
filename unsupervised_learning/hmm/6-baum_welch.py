@@ -30,7 +30,7 @@ def baum_welch(Observations, Transition, Emission, Initial, iterations=1000):
         or None, None on failure
     """
     # check that Observations is the correct type and dimension
-    if type(Observations) is not np.ndarray or len(Observation.shape) < 1:
+    if type(Observations) is not np.ndarray or len(Observations.shape) < 1:
         return None, None
     # save T from Observations shape
     T = Observations.shape[0]
