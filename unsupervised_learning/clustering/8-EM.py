@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Write a function that perfoms the expectation maximization
-for a GMM"""
 
+"""Write a function that performsthe expectation
+maximization of a GMM"""
 
 import numpy as np
 initialize = __import__('4-initialize').initialize
