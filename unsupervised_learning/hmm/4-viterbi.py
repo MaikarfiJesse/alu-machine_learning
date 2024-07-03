@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Write the function that calculates that most likely sequence of hidden states for the Hidden Markov Model"""
+"""Write the function that calculates that most likely sequence of
+hidden states for the Hidden Markov Model"""
 
 
 import numpy as np
