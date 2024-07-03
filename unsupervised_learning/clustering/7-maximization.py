@@ -6,7 +6,6 @@ for a GMM"""
 import numpy as np
 
 
-
 def maximization(X, g):
     """
     initializes variables for a Gaussian Mixture Model
